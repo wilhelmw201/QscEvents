@@ -1,5 +1,0 @@
-# 太吾秘境事件包
-包含了所有的事件。依赖于隔壁的QscLib。
-# 编译 
-注意这个包无法通过正常编译。你需要先编译QscLib (https://github.com/wilhelmw201/QscLib) 之后把生成的dll放在SteamLibrary\steamapps\common\The Scroll Of Taiwu\Event\EventCompiler文件夹下（创建一个）并用我的魔改TaiwuEventCompiler.dll覆盖SteamLibrary\steamapps\common\The Scroll Of Taiwu\Event\EventCompiler下的茄子dll才能编译。生成的Qsclib当然也要作为一个mod加载。
-有问题，建议，和pull request请提在issue里面。感激不尽。

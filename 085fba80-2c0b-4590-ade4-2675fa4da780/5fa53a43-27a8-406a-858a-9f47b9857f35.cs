@@ -8,12 +8,12 @@
 
 //请填写以下接口
 #region CustomUsings
-using System.Collections.Generic;
-using Config.EventConfig;
+
 #endregion
 #if IN_IDE
 using System.Collections.Generic;
-
+using System.Collections.Generic;
+using Config.EventConfig;
 public class EventOption_5fa53a4327a8406a858a9f47b9857f35 : Event_085fba802c0b4590ade42675fa4da780
 {
 #endif

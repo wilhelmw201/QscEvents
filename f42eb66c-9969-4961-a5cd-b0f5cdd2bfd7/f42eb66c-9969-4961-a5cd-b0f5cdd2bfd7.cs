@@ -7,6 +7,7 @@
 #region CustomUsings
 using System.Collections.Generic;
 using Config.EventConfig;
+using Qsc;
 #endregion
 
 #if IN_IDE
@@ -49,6 +50,7 @@ public class Event_f42eb66c99694961a5cdb0f5cdd2bfd7 : TaiwuEventItem
     public override string GetReplacedContentString()
     {
         //TODO
+        
         return string.Empty;
     }
     

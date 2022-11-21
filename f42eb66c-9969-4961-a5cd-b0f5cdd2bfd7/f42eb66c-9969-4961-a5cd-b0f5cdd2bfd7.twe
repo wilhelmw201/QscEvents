@@ -1,6 +1,6 @@
 return {
 	EventGuid = "f42eb66c-9969-4961-a5cd-b0f5cdd2bfd7",
-	TmEdit = 1668986611,
+	TmEdit = 1669000395,
 	SaveVersion = "Alpha_1",
 	EventGroup = "willtrevg1",
 	ForceSingle = false,
@@ -16,7 +16,7 @@ return {
 	ControlMaskCode = 0,
 	MaskTweenTime = "0",
 	AudioName = "",
-	EscOption = "",
+	EscOption = "Option_-176247845",
 	Options = {
 		[1] = {
 			Guid = "6d07f44a-5798-4b3c-885b-67fe96b244b1",

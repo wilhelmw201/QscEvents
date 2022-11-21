@@ -12,6 +12,7 @@ using GameData.Domains.TaiwuEvent.EventHelper;
 #endregion
 
 #if IN_IDE
+
 public class Event_ca3ad10e227c4b5e96019b1174764019 : TaiwuEventItem
 {
 #endif

@@ -7,7 +7,11 @@
 #region CustomUsings
 using System.Collections.Generic;
 using Config.EventConfig;
+using Qsc;
+using System.Linq;
+using GameData.Utilities;
 #endregion
+
 
 #if IN_IDE
 public class Event_41f1ee150d194fd4a8c2dff6f90ce379 : TaiwuEventItem
@@ -30,9 +34,14 @@ public class Event_41f1ee150d194fd4a8c2dff6f90ce379 : TaiwuEventItem
     /// </summary>
     public override void OnEventEnter()
     {
-        //TODO
-    }
-    
+        PlayerSelectEvent Event = (PlayerSelectEvent)QscCoreUtils.EventList.Last();
+        AdaptableLog.Info($"Curr Event {Event}, Null: {Event == null}");
+        for (int i = 0; i < Event.Dests.Length; i++)
+        {
+            AdaptableLog.Info($"Sel{i}: {Event.OptionDescrs[i]}=>{Event.Dests[i]}");
+        }
+            }
+
     /// <summary>
     /// 该事件执行完毕，即将退出该事件时调用
     /// 一般用于从参数盒子中移除事件链中不需要用到的参数，或记录事件触发月份，确保后续触发几率计算
@@ -49,7 +58,10 @@ public class Event_41f1ee150d194fd4a8c2dff6f90ce379 : TaiwuEventItem
     public override string GetReplacedContentString()
     {
         //TODO
-        return string.Empty;
+
+        PlayerSelectEvent Event = (PlayerSelectEvent)QscCoreUtils.EventList.Last();
+
+        return Event.Description;
     }
     
     /// <summary>

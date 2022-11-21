@@ -44,7 +44,8 @@ public class Event_fb86b88d44b84023a973c8a46454dc07 : TaiwuEventItem
         int enemyId;
         if (Event.EnemyId < 0)
         {
-            enemyId = EventHelper.CreateNonIntelligentCharacter(228);
+            enemyId = QscEnemyUtils.CreateFittingEnemy(this.TaiwuEvent);
+            // enemyId = EventHelper.CreateNonIntelligentCharacter(228);
         }
         else
         {

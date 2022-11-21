@@ -4,28 +4,50 @@ return {
 	Author = "",
 	Export = true,
 	AllEventContent = {
+		["ed2d6cdb-5873-46cb-92ce-2fda1f8e6b2a"] = {
+			EventName = "1RandomJumpEvent_0Jumping",
+			EventContent = [[]],
+		},
+		["fb86b88d-44b8-4023-a973-c8a46454dc07"] = {
+			EventName = "BattleEvent_0Entry",
+			EventContent = [[<Character key=RoleTaiwu str=Name />遭遇了<Character key=BattleEventEnemy str=Name />!<NL>注：有的高级敌人无视特定类型伤害，请确认你的攻击有效。]],
+			[1] = [[迎战敌人！]],
+			[2] = [[试图逃脱......]],
+		},
+		["538db91b-072b-4b0b-943d-c0ea9a40be6e"] = {
+			EventName = "SimpleLootEvent_1Pick",
+			EventContent = [[你可以选择最多<ArgBox key=SimpleLootPick type=int/>件物品。每少选择一件物品则会获得<ArgBox key=SimpleLootGold type=int/>金钱。]],
+			[1] = [[确定选择]],
+			[2] = [[全部放弃]],
+		},
+		["c7419833-87e8-467c-91c5-d34d7162ec6b"] = {
+			EventName = "竹屋事件历练",
+			EventContent = [[你获得了历练！你可能会希望使用一个突破mod来避免sl。]],
+			[1] = [[喜不自胜！]],
+		},
+		["2b02c445-49d2-4756-bcbd-85c1571e81d4"] = {
+			EventName = "竹屋事件 精制1",
+			EventContent = [[选择一个装备......]],
+			[1] = [[ok]],
+			[2] = [[no]],
+		},
+		["20db3563-41bc-42de-b5db-d48e949004f5"] = {
+			EventName = "GetGoldEvent_0",
+			EventContent = [[<Character key=RoleTaiwu str=Name />获得了<ArgBox key=GoldCount type=int/>银钱！]],
+			[1] = [[喜不自胜！]],
+		},
 		["84c4968e-db08-418d-bc19-0141ddd41d62"] = {
 			EventName = "SimpleSkillGenEvent_0Entry",
 			EventContent = [[]],
 		},
-		["9274a890-d48f-41ab-8569-8695d9283c24"] = {
-			EventName = "SimpleLootEvent_00Entry",
-			EventContent = [[跳转。。]],
-		},
-		["dbcb6dbf-d40c-4806-824f-65f77e8c8249"] = {
-			EventName = "竹屋事件 召唤",
-			EventContent = [[不如静观其变，看这剑柄到底是有什么神力......]],
-			[1] = [[还是算了......]],
-			[2] = [[那就来吧！]],
-		},
-		["209dff44-822e-4ec7-982c-effc2ac30e67"] = {
-			EventName = "BattleEvent_2战胜敌人",
-			EventContent = [[<Character key=RoleTaiwu str=Name/>战胜了敌人！]],
-			[1] = [[如此便好......]],
+		["cec4ff38-184f-482e-affa-37dce10e30e1"] = {
+			EventName = "竹屋事件 相枢2备战",
+			EventContent = [[]],
+			[1] = [[拼死一战！]],
 		},
 		["41f1ee15-0d19-4fd4-a8c2-dff6f90ce379"] = {
-			EventName = "2JumpChoiceEvent_0Entry",
-			EventContent = [[带文案的跳转]],
+			EventName = "2PlayerSelectEvent_0Entry",
+			EventContent = [[带文案的跳转,请确保至少有一个的概率是100]],
 			[1] = [[1]],
 			[2] = [[2]],
 			[3] = [[3]],
@@ -36,86 +58,123 @@ return {
 			[8] = [[8]],
 			[9] = [[9]],
 			[10] = [[10]],
-			[11] = [[还是罢了......]],
 		},
-		["c7419833-87e8-467c-91c5-d34d7162ec6b"] = {
-			EventName = "竹屋事件历练",
-			EventContent = [[你获得了历练！你可能会希望使用一个突破mod来避免sl。]],
-			[1] = [[喜不自胜！]],
+		["474b80dd-02ff-46e8-8c39-5e9087a23cc8"] = {
+			EventName = "BattleEvent_2逃跑失败",
+			EventContent = [[<Character key=RoleTaiwu str=Name/>被<Character key=BattleEventEnemy str=Name/>发现了...]],
+			[1] = [[无可奈何，准备迎战......]],
 		},
-		["8c069855-3b07-4bc4-90e5-c2c853a62e55"] = {
-			EventName = "入口Hint",
-			EventContent = [[欢迎游玩太吾极速版！<NL>深谷中的每个格子都会触发战斗和战斗事件，通过这些事件提升自己并击败每个阶段的相枢化身吧！<NL>整个游戏流程中无法自然治疗，你需要寻找事件或者使用药物来恢复伤势。可以随便过月，过月的周天运转会直接获得当前内功的所有内力。竹庐有一些其他特殊功能，请好好利用。<NL>注意：初始点数可能会对游戏的难度产生影响，建议0-0-0开局，至少别点古冢遗刻。此外，本mod和游戏本体流程目前有严重冲突，请使用新档游玩，并且在mod流程结束之后删掉该档重新开档。]],
-			[1] = [[开始游玩~]],
+		["dbcb6dbf-d40c-4806-824f-65f77e8c8249"] = {
+			EventName = "竹屋事件 召唤",
+			EventContent = [[不如看看这剑柄到底是有什么神力......]],
+			[1] = [[还是算了......]],
+			[2] = [[那就来吧！]],
 		},
-		["a74e35e4-4d4a-4e92-9aab-93ac7a9d17c8"] = {
-			EventName = "竹屋事件 精制4",
-			EventContent = [[失败了！]],
-			[1] = [[只好如此......]],
+		["024f1057-6d1c-4372-9147-707a239cb329"] = {
+			EventName = "ForgeEvent_1成功",
+			EventContent = [[打造成功了！]],
+			[1] = [[获取物品......]],
 		},
-		["d59219af-4b67-4313-8494-aa13206fdb53"] = {
-			EventName = "0GeneralReturn",
-			EventContent = [[这个是一个简单的return事件，如果图省事可以直接跳转我。]],
-		},
-		["05d730a1-734c-4eff-b377-8dfd75187f40"] = {
-			EventName = "SimpleLootGenEvent_0Entry",
-			EventContent = [[一个小小的包装event，生成传进来的物品之后跳到simplelootevent]],
-		},
-		["f42eb66c-9969-4961-a5cd-b0f5cdd2bfd7"] = {
-			EventName = "竹屋事件 内力",
-			EventContent = [[鉴于好像没有公布输入string的接口，暂时只能这样了，按下下面的按钮可以转换约5%对应属性的内力。。]],
-			[1] = [[金刚内力+5]],
-			[2] = [[紫霞内力+5]],
-			[3] = [[玄阴内力+5]],
-			[4] = [[纯阳内力+5]],
-			[5] = [[归元内力+5]],
-			[6] = [[按不动了，不调了......]],
-		},
-		["cec4ff38-184f-482e-affa-37dce10e30e1"] = {
-			EventName = "竹屋事件 相枢2备战",
+		["7722dd03-8cfc-45df-83c7-5d31dcfcaa10"] = {
+			EventName = "1EventListEvent_1Jumping",
 			EventContent = [[]],
-			[1] = [[拼死一战！]],
+		},
+		["d6da980c-bb42-46fe-9aa4-0a175589c270"] = {
+			EventName = "BattleEvent_2成功逃脱",
+			EventContent = [[<Character key=RoleTaiwu str=Name/>从<Character key=BattleEventEnemy str=Name/>处逃走了!]],
+			[1] = [[呼，好险......]],
+		},
+		["9274a890-d48f-41ab-8569-8695d9283c24"] = {
+			EventName = "SimpleLootEvent_00Entry",
+			EventContent = [[跳转。。]],
+		},
+		["4d1027ea-e416-464e-8675-5206582c0e31"] = {
+			EventName = "TransitionDummyEvent_0EntryAndExit",
+			EventContent = [[如果你在一个事件中想跳到另一个事件，那么先把这个事件push上去再push另外那个事件，就可以指定你的事件的返回的地址辣]],
+		},
+		["a81b1116-d385-41fa-bf6f-3494e74d8dda"] = {
+			EventName = "阶段结束",
+			EventContent = [[谷中的景象似乎不在崩解...而竹庐处却似乎有异象正在发生......]],
+			[1] = [[也许应该携“伏虞剑柄”返回竹庐一探究竟......]],
+		},
+		["083d8631-be60-479f-b65f-312c3da9ca63"] = {
+			EventName = "SimpleSkillPick_0Entry",
+			EventContent = [[]],
+		},
+		["55c52634-0bfe-4bfa-901c-a835fd2208c7"] = {
+			EventName = "总入口",
+			EventContent = [[负责跳转qsc所有事件]],
+		},
+		["e34c7a9a-ea86-434b-874e-55cbb9866b9d"] = {
+			EventName = "SimpleLootGenEvent_1Exit",
+			EventContent = [[因为这个事件调用了其他事件，所以需要最终的汇集点，来清理掉IEditorEvent，并跳转到下一个事件（如果有的话）]],
+		},
+		["209dff44-822e-4ec7-982c-effc2ac30e67"] = {
+			EventName = "BattleEvent_2战胜敌人",
+			EventContent = [[<Character key=RoleTaiwu str=Name/>战胜了敌人！]],
+			[1] = [[如此便好......]],
+		},
+		["5191e71d-bc5d-4e5d-b5cf-54e425bef5c8"] = {
+			EventName = "BattleEvent_1战斗跳转",
+			EventContent = [[学茄子写的战斗跳转]],
 		},
 		["06706185-18a4-4453-ad64-fc5e4078d6eb"] = {
 			EventName = "HealingEvent_0EntryExit",
 			EventContent = [[休息一番之后，你身上的伤势减轻了，并驱除了一些毒素......]],
 			[1] = [[如此便好......]],
 		},
-		["083d8631-be60-479f-b65f-312c3da9ca63"] = {
-			EventName = "SimpleSkillPick_0Entry",
-			EventContent = [[]],
-		},
-		["ed2d6cdb-5873-46cb-92ce-2fda1f8e6b2a"] = {
-			EventName = "1RandomJumpEvent_0Jumping",
-			EventContent = [[]],
-		},
-		["e34c7a9a-ea86-434b-874e-55cbb9866b9d"] = {
-			EventName = "SimpleLootGenEvent_1Exit",
-			EventContent = [[因为这个事件调用了其他事件，所以需要最终的汇集点，来清理掉IEditorEvent，并跳转到下一个事件（如果有的话）]],
+		["8c069855-3b07-4bc4-90e5-c2c853a62e55"] = {
+			EventName = "入口Hint",
+			EventContent = [[欢迎游玩太吾极速版！<NL>深谷中的每个格子都会触发战斗和战斗事件，通过这些事件提升自己并击败每个阶段的相枢化身吧！<NL>整个游戏流程中无法自然治疗，你需要寻找事件或者使用药物来恢复伤势。可以随便过月，过月的周天运转会直接获得当前内功的所有内力。竹庐有一些其他特殊功能，请好好利用。<NL>注意：初始点数可能会对游戏的难度产生影响，建议0-0-0开局，至少别点古冢遗刻。此外，本mod和游戏本体流程目前有严重冲突，请使用新档游玩，并且在mod流程结束之后删掉该档重新开档。]],
+			[1] = [[开始游玩~]],
 		},
 		["b45992f3-e199-4a0b-843e-a0552f4f50fe"] = {
 			EventName = "竹屋事件 相枢1接近",
 			EventContent = [[TODO待我抄点文案]],
 			[1] = [[继续前行......]],
 		},
+		["185644c3-ec94-45cb-a3dc-a31e600632ed"] = {
+			EventName = "BattleEvent_3Cleanup",
+			EventContent = [[因为这个事件调用了其他事件，所以需要最终的汇集点，来清理掉IEditorEvent，并跳转到下一个事件（如果有的话）]],
+		},
+		["dba60498-9a12-420d-b242-6014a7a354f6"] = {
+			EventName = "警告",
+			EventContent = [[你似乎打开了太吾极速版mod并且处在正常游戏流程中。<NL>请关闭太吾极速版mod！]],
+			[1] = [[马上就去！]],
+		},
+		["6a569bdf-afd5-469c-a2c0-e8bc46d7da35"] = {
+			EventName = "竹屋事件 相枢4胜利并结束",
+			EventContent = [[]],
+			[1] = [[......]],
+		},
+		["24449f3d-2521-4735-9d18-f0e24152294a"] = {
+			EventName = "SimpleLootEvent_2PickJump",
+			EventContent = [[<NL>（Will注：不加这个对话框会有bug导致无法选择物品，别问我找bug找了多久。。。）]],
+			[1] = [[茄子...杀...杀......]],
+		},
+		["cb9862f4-a382-4061-bbfc-bd61e01a8ead"] = {
+			EventName = "SimpleSkillGenEvent_1Exit",
+			EventContent = [[]],
+		},
+		["e9e484dd-bfe5-46ae-9817-e3cc133d734c"] = {
+			EventName = "竹屋事件 精制1.1",
+			EventContent = [[连续两个选择事件会出bug，插一个对话框歇一会]],
+			[1] = [[只好如此......]],
+		},
+		["05d730a1-734c-4eff-b377-8dfd75187f40"] = {
+			EventName = "SimpleLootGenEvent_0Entry",
+			EventContent = [[一个小小的包装event，生成传进来的物品之后跳到simplelootevent。<NL>如果没穿的话按照地块来生成。]],
+		},
+		["4111ac69-f3ec-4acb-aa90-eb1a916dc793"] = {
+			EventName = "ForgeEvent_2失败",
+			EventContent = [[失败了！]],
+			[1] = [[再试一次......]],
+			[2] = [[离开此处......]],
+		},
 		["56b01246-be1c-4779-a9ba-60e27f392779"] = {
 			EventName = "竹屋事件 精制3",
 			EventContent = [[成功了！]],
 			[1] = [[拿回物品......]],
-		},
-		["ca3ad10e-227c-4b5e-9601-9b1174764019"] = {
-			EventName = "竹屋事件 精制2",
-			EventContent = [[选择一个材料......]],
-			[1] = [[ok]],
-			[2] = [[no]],
-		},
-		["f13a3710-1e32-41db-ab58-3d9489cf0f67"] = {
-			EventName = "1EventListEvent_0Entry",
-			EventContent = [[]],
-		},
-		["b1e95cd0-ce0a-4545-9074-2479391ffff3"] = {
-			EventName = "ListOfEventsEvent_DONTUSE",
-			EventContent = [[挨个执行若干事件 FIXME<NL>]],
 		},
 		["085fba80-2c0b-4590-ade4-2675fa4da780"] = {
 			EventName = "竹屋事件",
@@ -128,42 +187,70 @@ return {
 			[6] = [[获得突破用历练......]],
 			[7] = [[离开......]],
 		},
-		["2b02c445-49d2-4756-bcbd-85c1571e81d4"] = {
-			EventName = "竹屋事件 精制1",
-			EventContent = [[选择一个装备......]],
-			[1] = [[ok]],
-			[2] = [[no]],
+		["f5e7e551-a37f-4945-b7c4-0e6128789d77"] = {
+			EventName = "竹屋事件 精制2跳转",
+			EventContent = [[]],
 		},
 		["09325d31-b0e9-405c-91fc-f09f21619a65"] = {
 			EventName = "竹屋事件 相枢3逃跑",
-			EventContent = [[<Character key=RoleTaiwu str=Name/>从<Character key=Xiangshu str=Name/>处逃走了!<NL>一时间，众多低语离<Character key=RoleTaiwu str=Name/>远去，种种幻象也逐渐消解...]],
+			EventContent = [[<Character key=RoleTaiwu str=Name/>从<Character key=Xiangshu str=Name/>处逃走了!<NL>一时间，众多低语离<Character key=RoleTaiwu str=Name/>远去，种种幻象也瞬间崩解...]],
 			[1] = [[......]],
 		},
-		["7722dd03-8cfc-45df-83c7-5d31dcfcaa10"] = {
-			EventName = "1EventListEvent_1Jumping",
+		["f13a3710-1e32-41db-ab58-3d9489cf0f67"] = {
+			EventName = "1EventListEvent_0Entry",
 			EventContent = [[]],
 		},
-		["73e70c39-85a9-430d-a607-3514509670ae"] = {
-			EventName = "SimpleSkillPick_2PickJump",
-			EventContent = [[Will注：理论上可以直接跳转但是想到之前的物品bug我懒得试了。]],
-			[1] = [[只好如此......]],
+		["d59219af-4b67-4313-8494-aa13206fdb53"] = {
+			EventName = "0GeneralReturn",
+			EventContent = [[这个是一个简单的return事件，如果图省事可以直接跳转我。]],
+		},
+		["1349f475-ab70-4d8c-a228-42717a5b02ff"] = {
+			EventName = "ForgeEvent_0选择",
+			EventContent = [[你找到了一个废弃的工坊，但似乎这里的工具还可以使用......你可以选择一个制造引子，试试能做出什么。]],
+			[1] = [[yes]],
+			[2] = [[no]],
 		},
 		["b5eb09c7-5956-42b5-b8b2-e1ded455127b"] = {
 			EventName = "竹屋事件 相枢3跳转",
 			EventContent = [[zhandoutiaozhuan]],
 		},
-		["cb9862f4-a382-4061-bbfc-bd61e01a8ead"] = {
-			EventName = "SimpleSkillGenEvent_1Exit",
-			EventContent = [[]],
-		},
-		["dba60498-9a12-420d-b242-6014a7a354f6"] = {
-			EventName = "警告",
-			EventContent = [[你似乎打开了太吾极速版mod并且处在正常游戏流程中。<NL>请关闭太吾极速版mod！]],
-			[1] = [[马上就去！]],
-		},
 		["68d08ac2-9f3e-487c-80a5-323423b7b59b"] = {
 			EventName = "RandomJumpEvent_DONTUSE",
 			EventContent = [[随机跳到一个事件 FIXME 拆]],
+		},
+		["ca3ad10e-227c-4b5e-9601-9b1174764019"] = {
+			EventName = "竹屋事件 精制2",
+			EventContent = [[选择一个材料......]],
+			[1] = [[ok]],
+			[2] = [[no]],
+		},
+		["8df99a21-588e-4592-b991-8fb6a591558e"] = {
+			EventName = "0Dummy",
+			EventContent = [[]],
+		},
+		["b1e95cd0-ce0a-4545-9074-2479391ffff3"] = {
+			EventName = "ListOfEventsEvent_DONTUSE",
+			EventContent = [[挨个执行若干事件 FIXME<NL>]],
+		},
+		["a74e35e4-4d4a-4e92-9aab-93ac7a9d17c8"] = {
+			EventName = "竹屋事件 精制4",
+			EventContent = [[失败了！]],
+			[1] = [[只好如此......]],
+		},
+		["f42eb66c-9969-4961-a5cd-b0f5cdd2bfd7"] = {
+			EventName = "竹屋事件 内力",
+			EventContent = [[鉴于好像没有公布输入string的接口，暂时只能这样了，按下下面的按钮可以转换约5%对应属性的内力。。]],
+			[1] = [[金刚内力+5]],
+			[2] = [[紫霞内力+5]],
+			[3] = [[玄阴内力+5]],
+			[4] = [[纯阳内力+5]],
+			[5] = [[归元内力+5]],
+			[6] = [[按不动了，不调了......]],
+		},
+		["73479eab-8c22-4ad5-81ef-3d3072773532"] = {
+			EventName = "HealingEvent_0",
+			EventContent = [[经过奋力的疗伤，<Character key=RoleTaiwu str=Name />的伤势减轻了许多...]],
+			[1] = [[如此便好......]],
 		},
 		["66f62965-ff24-49ee-87ce-516796dfbea2"] = {
 			EventName = "SimpleSkillPick_1Pick",
@@ -180,57 +267,10 @@ return {
 			[10] = [[9]],
 			[11] = [[置之不理...]],
 		},
-		["6a569bdf-afd5-469c-a2c0-e8bc46d7da35"] = {
-			EventName = "竹屋事件 相枢4胜利并结束",
-			EventContent = [[]],
-			[1] = [[......]],
-		},
-		["8df99a21-588e-4592-b991-8fb6a591558e"] = {
-			EventName = "0Dummy",
-			EventContent = [[]],
-		},
-		["538db91b-072b-4b0b-943d-c0ea9a40be6e"] = {
-			EventName = "SimpleLootEvent_1Pick",
-			EventContent = [[你可以选择最多<ArgBox key=SimpleLootPick type=int/>件物品。每少选择一件物品则会获得<ArgBox key=SimpleLootGold type=int/>金钱。]],
-			[1] = [[确定选择]],
-			[2] = [[全部放弃]],
-		},
-		["d6da980c-bb42-46fe-9aa4-0a175589c270"] = {
-			EventName = "BattleEvent_2成功逃脱",
-			EventContent = [[<Character key=RoleTaiwu str=Name/>从<Character key=BattleEventEnemy str=Name/>处逃走了!]],
-			[1] = [[呼，好险......]],
-		},
-		["fb86b88d-44b8-4023-a973-c8a46454dc07"] = {
-			EventName = "BattleEvent_0Entry",
-			EventContent = [[<Character key=RoleTaiwu str=Name />遭遇了<Character key=BattleEventEnemy str=Name />!]],
-			[1] = [[迎战敌人！]],
-			[2] = [[试图逃脱......]],
-		},
-		["4d1027ea-e416-464e-8675-5206582c0e31"] = {
-			EventName = "TransitionDummyEvent_0EntryAndExit",
-			EventContent = [[如果你在一个事件中想跳到另一个事件，那么先把这个事件push上去再push另外那个事件，就可以指定你的事件的返回的地址辣]],
-		},
-		["5191e71d-bc5d-4e5d-b5cf-54e425bef5c8"] = {
-			EventName = "BattleEvent_1战斗跳转",
-			EventContent = [[学茄子写的战斗跳转]],
-		},
-		["55c52634-0bfe-4bfa-901c-a835fd2208c7"] = {
-			EventName = "总入口",
-			EventContent = [[负责跳转qsc所有事件]],
-		},
-		["185644c3-ec94-45cb-a3dc-a31e600632ed"] = {
-			EventName = "BattleEvent_3Cleanup",
-			EventContent = [[因为这个事件调用了其他事件，所以需要最终的汇集点，来清理掉IEditorEvent，并跳转到下一个事件（如果有的话）]],
-		},
-		["474b80dd-02ff-46e8-8c39-5e9087a23cc8"] = {
-			EventName = "BattleEvent_2逃跑失败",
-			EventContent = [[<Character key=RoleTaiwu str=Name/>被<Character key=BattleEventEnemy str=Name/>发现了...]],
-			[1] = [[无可奈何，准备迎战......]],
-		},
-		["24449f3d-2521-4735-9d18-f0e24152294a"] = {
-			EventName = "SimpleLootEvent_2PickJump",
-			EventContent = [[<NL>（Will注：不加这个对话框会有bug，别问我找bug找了多久。。。）]],
-			[1] = [[喜不自胜！]],
+		["73e70c39-85a9-430d-a607-3514509670ae"] = {
+			EventName = "SimpleSkillPick_2PickJump",
+			EventContent = [[Will注：理论上可以直接跳转但是想到之前的物品bug我懒得试了。]],
+			[1] = [[只好如此......]],
 		},
 	}
 }

@@ -1,0 +1,26 @@
+return {
+	EventGuid = "024f1057-6d1c-4372-9147-707a239cb329",
+	TmEdit = 1669034711,
+	SaveVersion = "Alpha_1",
+	EventGroup = "willtrevg1",
+	ForceSingle = false,
+	EventType = "ModEvent",
+	TriggerType = "None",
+	EventOrder = 100,
+	DecideRole = "RoleTaiwu",
+	TargetRole = "",
+	EventTexture = "",
+	InternalTexture = false,
+	TexturePath = "",
+	ControlMask = false,
+	ControlMaskCode = 0,
+	MaskTweenTime = "0",
+	AudioName = "",
+	EscOption = "",
+	Options = {
+		[1] = {
+			Guid = "89fa8051-17e0-4e98-a7bf-e3af87a14713",
+			OptionKey = "Option_-1095740742",
+		},
+	},
+}

@@ -8,7 +8,12 @@
 using System;
 using System.Collections.Generic;
 using Config.EventConfig;
+using GameData.ArchiveData;
+using GameData.Common;
+using GameData.Domains;
+using GameData.Domains.Map;
 using GameData.Domains.TaiwuEvent.EventHelper;
+using GameData.Utilities;
 using Qsc;
 #endregion
 
@@ -23,7 +28,17 @@ public class Event_55c526340bfe4bfa901ca835fd2208c7 : TaiwuEventItem
     /// <returns>true - 可以执行 false - 忽略触发不执行</returns>
     public override bool OnCheckEventCondition()
     {
-        //检查如果不在谷中则关掉自己。
+        if (QscCoreUtils.GetWorldState(this.TaiwuEvent) >= 1000) return false;
+        // 在这里看煎饼
+        bool HasFuyu = EventHelper.IsTaiwuHasItem(12, 210);
+        if (!HasFuyu) return false;
+        var Taiwu = DomainManager.Taiwu.GetTaiwu();
+        var TWLocation = Taiwu.GetLocation();
+        short AreaId = TWLocation.AreaId;
+        short BlockId = TWLocation.BlockId;
+        var BlockData = EventHelper.GetMapBlockData(AreaId, BlockId);
+        if (BlockData.Destroyed) return false;
+        if (QscCoreUtils.GetQscSubProgress(this.TaiwuEvent) >= 1000) return false; 
         return true;
     }
     
@@ -33,20 +48,58 @@ public class Event_55c526340bfe4bfa901ca835fd2208c7 : TaiwuEventItem
     /// </summary>
     public override void OnEventEnter()
     {
-        // 清理深谷出口事件
-        // 如果没拿到煎饼结束
-        // 如果地块毁坏了结束
-        // 按照地块类型，毁坏该地块（TODO）并跳转
-        BaseEditorEvent Evt = QscEvents.TestEventCollection.Entry;
-        if (QscCoreUtils.EventList.Count != 0)
+        var Taiwu = DomainManager.Taiwu.GetTaiwu();
+        // TODO 如果不在谷中设定世界进度
+
+        // 否则初始化进度（现在已经有煎饼了）
+        if (QscCoreUtils.GetWorldState(this.TaiwuEvent ) < 0)
         {
-            throw new InvalidOperationException("进入新事件时发现QscCoreUtils.Eventlist非空。之前的事件是否全部正常返回？");
+            QscCoreUtils.SetQscProgress(this.TaiwuEvent, 100);
+            QscCoreUtils.SetQscSubProgress(this.TaiwuEvent, 0);
         }
-           
-        QscCoreUtils.EventList.Add(Evt);
-        EventHelper.ToEvent(Evt.Entry());
+        // 清理深谷出口事件
+
+
+        // 如果没有地块了，结束
+        if (QscCoreUtils.GetQscSubProgress(this.TaiwuEvent) >= 100)
+        {
+            QscCoreUtils.SetQscSubProgress(this.TaiwuEvent, 999);
+            EventHelper.ToEvent("a81b1116-d385-41fa-bf6f-3494e74d8dda");
+            return;
+        }
+
+
+        // 如果地块毁坏了结束
+        var TWLocation = Taiwu.GetLocation();
+        short AreaId = TWLocation.AreaId;
+        short BlockId = TWLocation.BlockId;
+        var BlockData = EventHelper.GetMapBlockData(AreaId, BlockId);
+        var blockType = BlockData.BlockSubType;
+        // 检查是不是竹庐
+        if (blockType < EMapBlockSubType.Farmland || blockType > EMapBlockSubType.Block)
+        {
+            // 跳到竹庐事件
+            EventHelper.ToEvent("085fba80-2c0b-4590-ade4-2675fa4da780");
+            return;
+        }
+
+        // 按照地块类型，毁坏该地块并跳转
+        BlockData.Destroyed = true;
+        BlockData.CurrResources = new MaterialResources();
+        DomainManager.Map.SetBlockData(DataContextManager.GetCurrentThreadDataContext(), BlockData);
+        var EventTbl = QscEvents.GetEventTblFromBlock(blockType);
+        QscCoreUtils.IncreaseQscSubProgress(this.TaiwuEvent);
+
+       // AdaptableLog.Info($"Choose EventTbl:{EventTbl}");
+
+        var Entry = EventTbl.Draw(this.TaiwuEvent);
+        var EntryEvent = Entry.EntryEvent();
+        QscCoreUtils.EventList.Add(EntryEvent);
+        EventHelper.ToEvent(EntryEvent.Entry());
+
+
     }
-    
+
     /// <summary>
     /// 该事件执行完毕，即将退出该事件时调用
     /// 一般用于从参数盒子中移除事件链中不需要用到的参数，或记录事件触发月份，确保后续触发几率计算

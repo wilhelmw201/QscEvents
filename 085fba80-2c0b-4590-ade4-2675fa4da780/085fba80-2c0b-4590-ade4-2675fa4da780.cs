@@ -8,6 +8,8 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using Config.EventConfig;
+using GameData.Domains.SpecialEffect.CombatSkill.Common.Neigong;
+using GameData.Utilities;
 using Qsc;
 #endregion
 
@@ -60,8 +62,10 @@ public class Event_085fba802c0b4590ade42675fa4da780 : TaiwuEventItem
     /// <returns></returns>
     public override List<string> GetExtraFormatLanguageKeys()
     {
+        //return default;
         List<string> result = new List<string> { };
-        int bossID = QscCoreUtils.GetNextBoss(this.TaiwuEvent);
+        int bossID = (int)QscCoreUtils.GetNextBoss(this.TaiwuEvent);
+        AdaptableLog.Info("Boss" + bossID);
         switch (bossID)
         {
             case 0:
@@ -95,9 +99,19 @@ public class Event_085fba802c0b4590ade42675fa4da780 : TaiwuEventItem
                 result.Add("[不知道，等龙语获文案]");
                 break;
             case 101:
-                result.Add("[不知道，等紫无绡文案]");
+                result.Add("置身一片蒙蒙的紫竹林中");
+                break;
+            case 200:
+                result.Add("布满玄石");
+                break;
+            case 300:
+                result.Add("冰雪遍地，奇冷无比，异火燎烧，似有还无，金光闪烁，灼人眼目，草木不生，一片萧杀，霞光万丈，难分昼夜，蛟蛇盘绕，隐有龙吟，莺歌燕舞，四季如春，遍生枫木，鲜红似血，流光溢彩，幻化不定");
+                break;
+            default:
+                result.Add("?????");
                 break;
         }
+        return result;
             
     }
 

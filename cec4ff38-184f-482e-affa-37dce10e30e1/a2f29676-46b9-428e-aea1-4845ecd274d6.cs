@@ -8,14 +8,14 @@
 
 //请填写以下接口
 #region CustomUsings
+
+#endregion
+#if IN_IDE
+using System.Collections.Generic;
 using System.Collections.Generic;
 using Config.EventConfig;
 using GameData.Domains.TaiwuEvent.EventHelper;
 using Qsc;
-#endregion
-#if IN_IDE
-using System.Collections.Generic;
-
 public class EventOption_a2f2967646b9428eaea14845ecd274d6 : Event_cec4ff38184f482eaffa37dce10e30e1
 {
 #endif
@@ -79,6 +79,10 @@ public class EventOption_a2f2967646b9428eaea14845ecd274d6 : Event_cec4ff38184f48
     private string OnGetReplacedContent()
     {
         //TODO
+        if (QscCoreUtils.GetQscProgress(this.TaiwuEvent) <= 1)
+        {
+            return "拼死一战！（注：前两个boss是弱化版）";
+        }
         return string.Empty;
     }
     
@@ -96,7 +100,7 @@ public class EventOption_a2f2967646b9428eaea14845ecd274d6 : Event_cec4ff38184f48
 
         int enemyId = 1;
 
-        ArgBox.Get("XiangShu", ref enemyId);
+        ArgBox.Get("Xiangshu", ref enemyId);
 
         EventHelper.StartCombat(enemyId, Config.CombatConfig.DefKey.DieNone, "b5eb09c7-5956-42b5-b8b2-e1ded455127b", ArgBox, true);
 

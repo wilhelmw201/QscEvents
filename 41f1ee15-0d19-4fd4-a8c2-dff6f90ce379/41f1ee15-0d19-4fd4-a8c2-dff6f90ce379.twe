@@ -1,13 +1,13 @@
 return {
 	EventGuid = "41f1ee15-0d19-4fd4-a8c2-dff6f90ce379",
-	TmEdit = 1668962220,
+	TmEdit = 1669054431,
 	SaveVersion = "Alpha_1",
 	EventGroup = "willtrevg1",
 	ForceSingle = false,
 	EventType = "ModEvent",
 	TriggerType = "None",
 	EventOrder = 100,
-	DecideRole = "",
+	DecideRole = "RoleTaiwu",
 	TargetRole = "",
 	EventTexture = "",
 	InternalTexture = false,
@@ -57,10 +57,6 @@ return {
 		[10] = {
 			Guid = "7f090f00-42ab-4b3a-a4c7-dc6891d36e81",
 			OptionKey = "Option_-2020354464",
-		},
-		[11] = {
-			Guid = "74c4a1cd-b14b-408d-9e04-4a4d95966b71",
-			OptionKey = "Option_-1164496254",
 		},
 	},
 }

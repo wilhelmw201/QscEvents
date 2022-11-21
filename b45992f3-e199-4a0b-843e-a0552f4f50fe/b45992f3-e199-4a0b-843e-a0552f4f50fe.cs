@@ -7,9 +7,11 @@
 #region CustomUsings
 using System.Collections.Generic;
 using Config.EventConfig;
+using Qsc;
 #endregion
 
 #if IN_IDE
+
 public class Event_b45992f3e1994a0b843ea0552f4f50fe : TaiwuEventItem
 {
 #endif

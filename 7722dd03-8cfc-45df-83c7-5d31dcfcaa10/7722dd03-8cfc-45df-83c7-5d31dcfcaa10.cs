@@ -11,6 +11,7 @@ using GameData.Domains.TaiwuEvent.EventHelper;
 using Qsc;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
+using GameData.Utilities;
 #endregion
 
 #if IN_IDE
@@ -35,17 +36,20 @@ public class Event_7722dd038cfc45df83c75d31dcfcaa10 : TaiwuEventItem
     public override void OnEventEnter()
     {
         ListOfEventsEvent Event = (ListOfEventsEvent)QscCoreUtils.EventList.Last();
+        
         while (true)
         {
             if (Event.current < Event.Events.Length)
             {
                 Event.current++;
                 BaseEditorEvent NextEv = Event.Events[Event.current - 1];
+                AdaptableLog.Info("ListOfEvents: Going to " + NextEv);
                 if (NextEv == null)
                 {
                     continue;
                 }
-                Qsc.QscCoreUtils.CallEvent(NextEv);
+                Qsc.QscCoreUtils.CallEvent(NextEv, "7722dd03-8cfc-45df-83c7-5d31dcfcaa10");
+                break;
             }
             else
             {

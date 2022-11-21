@@ -7,6 +7,9 @@
 #region CustomUsings
 using System.Collections.Generic;
 using Config.EventConfig;
+using GameData.ArchiveData;
+using GameData.Common;
+using GameData.Domains;
 using Qsc;
 #endregion
 
@@ -31,7 +34,9 @@ public class Event_6a569bdfafd5469ca2c0e8bc46d7da35 : TaiwuEventItem
     /// </summary>
     public override void OnEventEnter()
     {
-        //TODO
+        // 推动进度
+
+
     }
     
     /// <summary>
@@ -74,6 +79,10 @@ public class Event_6a569bdfafd5469ca2c0e8bc46d7da35 : TaiwuEventItem
                 return "<Character key=RoleTaiwu str=Name/>战胜了龙语获！\n【文案待定】";
             case XiangShuType.ZiWuXiao:
                 return "<Character key=RoleTaiwu str=Name/>战胜了紫无绡！\n【文案待定】";
+            case XiangShuType.HuanXin:
+                return "<Character key=RoleTaiwu str=Name/>战胜了焕心！\n 恭喜！至此您已经通关了太吾秘境的全部内容。后续会逐渐丰富事件类型，并且增加走出山谷的奇遇。也许以后还会把整个奇遇移植到山谷外。如果有兴趣您还可以继续挑战染尘子。";
+            case XiangShuType.RanChenZi:
+                return "<Character key=RoleTaiwu str=Name/>战胜了染尘子！\n【文案待定】";
             default:
                 return "???";
         }

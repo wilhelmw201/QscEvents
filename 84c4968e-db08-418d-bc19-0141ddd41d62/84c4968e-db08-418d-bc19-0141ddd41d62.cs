@@ -42,8 +42,8 @@ public class Event_84c4968edb08418dbc190141ddd41d62 : TaiwuEventItem
         List<short> SkillsI = new List<short> { };
 
         var worldState = QscCoreUtils.GetWorldState(this.TaiwuEvent);
-
-        for (int i = 0; i < Event.count; i++)
+        AdaptableLog.Info($"got Event with {Event.qualityBonus.Length}({Event.allowedTypes.Length}) requests => pick {Event.count}");
+        for (int i = 0; i < Event.qualityBonus.Length; i++)
         {
 
             int qualityModifier = Event.qualityBonus[i];
@@ -63,11 +63,14 @@ public class Event_84c4968edb08418dbc190141ddd41d62 : TaiwuEventItem
 
             int grade = TmpTable.Draw(this.TaiwuEvent);
             List<short> Skills = QscLootGenerator.GenerateRandomGongFa(this.TaiwuEvent, Event.allowedTypes[i], grade, 1);
+
             SkillsI = SkillsI.Concat(Skills).ToList();
+
+            
         }
 
         List<bool> isGongFa = Enumerable.Repeat(true, SkillsI.Count).ToList();
-        //AdaptableLog.Info("EditorSkillPickEvent: generated" + SkillsI.Count);
+        AdaptableLog.Info("EditorSkillPickEvent: generated" + SkillsI.Count);
         QscCoreUtils.CallEvent(new EditorSimpleSkillPickEvent(
             SkillsI.Select((a) => { return (int)a; }).ToList(), 
             isGongFa,  Event.count, Event.gold), "cb9862f4-a382-4061-bbfc-bd61e01a8ead");

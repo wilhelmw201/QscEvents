@@ -34,7 +34,11 @@ public class Event_cec4ff38184f482eaffa37dce10e30e1 : TaiwuEventItem
     public override void OnEventEnter()
     {
         int bossid = -1;
+        
+
         Qsc.XiangShuType Boss = QscCoreUtils.GetNextBoss(this.TaiwuEvent);
+        AdaptableLog.Info($"WorldState{QscCoreUtils.GetWorldState(this.TaiwuEvent)}, next boss is {Boss}");
+
         if (Boss == XiangShuType.ZiWuXiao)
         {
             bossid = Config.Character.DefKey.ZiWuxiao;
@@ -42,6 +46,14 @@ public class Event_cec4ff38184f482eaffa37dce10e30e1 : TaiwuEventItem
         else if (Boss == XiangShuType.LongYuFu)
         {
             bossid = Config.Character.DefKey.LongYufu;
+        }
+        else if (Boss == XiangShuType.HuanXin)
+        {
+            bossid = Config.Character.DefKey.Huanxin;
+        }
+        else if (Boss == XiangShuType.RanChenZi)
+        {
+            bossid = Config.Character.DefKey.AntagonistRanchenzi;
         }
         else
         {
@@ -57,14 +69,14 @@ public class Event_cec4ff38184f482eaffa37dce10e30e1 : TaiwuEventItem
             }
             else
             {
-                baseid = Config.Character.DefKey.Monv0 + world * (Config.Character.DefKey.Monv1 - Config.Character.DefKey.Monv0)
+                baseid = Config.Character.DefKey.Monv0 + world;
             }
-            bossid = baseid + (int)Boss;
+            bossid = baseid + 9*(int)Boss;
         }
 
         AdaptableLog.Info($"Creating Xiangshu: {bossid}");
         var BossChar = EventHelper.CreateNonIntelligentCharacter((short)bossid);
-        ArgBox.Set("XiangShu", BossChar);
+        ArgBox.Set("Xiangshu", BossChar);
     }
 
     /// <summary>
@@ -83,7 +95,7 @@ public class Event_cec4ff38184f482eaffa37dce10e30e1 : TaiwuEventItem
     public override string GetReplacedContentString()
     {
         Qsc.XiangShuType Boss = QscCoreUtils.GetNextBoss(this.TaiwuEvent);
-        switch (QscCoreUtils.GetNextBoss(this.TaiwuEvent))
+        switch (Boss)
         {
             case XiangShuType.MoNv:
                 return "<Character key=RoleTaiwu str=Name/>遭遇了莫女！\n“那剑我已舍身取回，你为何还不来拿？\n你定是仍在怪我鲁莽，也罢，我便用那剑将你杀了吧……”\n莫女幽幽地念道，话音未落，突然直扑向太吾！  ";
@@ -103,10 +115,14 @@ public class Event_cec4ff38184f482eaffa37dce10e30e1 : TaiwuEventItem
                 return "<Character key=RoleTaiwu str=Name/>遭遇了金凰儿！\n“我问你啊，方今之世，可有圣人吗？\n我等不到圣人，唯有出来寻找，且让我试试你可有圣人之才如何？”\n金凰儿嘻笑着对你说，不料话音未落，已拔刀向太吾劈来！ ";
             case XiangShuType.JiuHan:
                 return "<Character key=RoleTaiwu str=Name/>遭遇了九寒！\n “洪水将至，你们却不去避祸……\n我欲救你们性命，你们反倒怕我多过于怕洪水，连我的面也不想看到……唉……”\n九寒悲伤的说着，忽然一个转身，犹如化作了一阵刺骨的寒风迎面向太吾袭来！ ";
-            case XiangShuType.LongYuHuo:
-                return "<Character key=RoleTaiwu str=Name/>遭遇了龙语获！\n【文案待定】";
+            case XiangShuType.LongYuFu:
+                return "<Character key=RoleTaiwu str=Name/>遭遇了龙语fu！\n【文案待定】";
             case XiangShuType.ZiWuXiao:
                 return "<Character key=RoleTaiwu str=Name/>遭遇了紫无绡！\n【文案待定】";
+            case XiangShuType.HuanXin:
+                return "<Character key=RoleTaiwu str=Name/>遭遇了焕心！\n【文案待定】";
+            case XiangShuType.RanChenZi:
+                return "<Character key=RoleTaiwu str=Name/>遭遇了染尘子！\n【文案待定】";
             default:
                 return "???";
         }

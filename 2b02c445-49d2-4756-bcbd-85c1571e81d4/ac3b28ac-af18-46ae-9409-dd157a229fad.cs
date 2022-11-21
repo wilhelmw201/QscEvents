@@ -8,11 +8,14 @@
 
 //请填写以下接口
 #region CustomUsings
-using System.Collections.Generic;
-using Config.EventConfig;
+
 #endregion
 #if IN_IDE
 using System.Collections.Generic;
+using System.Collections.Generic;
+using Config.EventConfig;
+using GameData.Domains.TaiwuEvent.DisplayEvent;
+using GameData.Domains.TaiwuEvent.EventHelper;
 
 public class EventOption_ac3b28acaf1846ae9409dd157a229fad : Event_2b02c44549d24756bcbd85c1571e81d4
 {
@@ -91,7 +94,23 @@ public class EventOption_ac3b28acaf1846ae9409dd157a229fad : Event_2b02c44549d247
         // 选项标记为已读，如果再次进入该事件则显示为暗灰色。如果本事件链再次触发，则会清除已读标记
         // SetOptionRead(thisOption.OptionKey);
         //TODO 有需要分不同条件跳转时，在这里编码if/switch分支
-	return "ca3ad10e-227c-4b5e-9601-9b1174764019";
+        int op = -1;
+        ArgBox.Get("ZhuWuOp", ref op);
+        if (op == 1000)
+        {
+            return "e9e484dd-bfe5-46ae-9817-e3cc133d734c";
+
+        }
+        else if (op == 2000)
+        {
+            return "f5e7e551-a37f-4945-b7c4-0e6128789d77";
+        }
+        else
+        {
+            return "e9e484dd-bfe5-46ae-9817-e3cc133d734c";
+
+        }
+
     }
     
     /// <summary>

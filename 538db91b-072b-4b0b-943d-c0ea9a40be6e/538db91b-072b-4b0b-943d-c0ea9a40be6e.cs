@@ -46,12 +46,12 @@ public class Event_538db91b072b4b0b943dc0ea9a40be6e : TaiwuEventItem
     /// </summary>
     public override void OnEventEnter()
     {
-        BaseEditorEvent ev = QscCoreUtils.EventList.Last();
-        if (!(ev is EditorSimpleLootEvent))
-        {
-            throw new System.InvalidOperationException("Popped incorrect item from event stack, got" + ev.GetType());
-        }
-        EditorSimpleLootEvent Event = (EditorSimpleLootEvent)ev;
+        //BaseEditorEvent ev = QscCoreUtils.EventList.Last();
+        //if (!(ev is EditorSimpleLootEvent))
+        //{
+        //    throw new System.InvalidOperationException("Popped incorrect item from event stack, got" + ev.GetType());
+        //}
+        EditorSimpleLootEvent Event = (EditorSimpleLootEvent)QscCoreUtils.EventList.Last();
         
         int charid = Event.containerId;
         var LootChar = EventHelper.GetCharacterById(charid);

@@ -15,6 +15,7 @@ using Qsc;
 using System.Linq;
 using System.ComponentModel;
 using GameData.Domains.Taiwu;
+using GameData.Utilities;
 #endregion
 
 #if IN_IDE
@@ -42,7 +43,6 @@ public class Event_05d730a1734c4effb3778dfd75187f40 : TaiwuEventItem
         var Table = Event.Table;
         if (Table == null)
         {
-
             var Taiwu = DomainManager.Taiwu.GetTaiwu();
             var TWLocation = Taiwu.GetLocation();
             short AreaId = TWLocation.AreaId;
@@ -52,10 +52,19 @@ public class Event_05d730a1734c4effb3778dfd75187f40 : TaiwuEventItem
             // Table decided by current Block.
             Table = QscLootGenerator.GetLootTableFromBlock(blockType);
         }
+        int count = Event.count;
+        if (count <= 0)
+        {
+            count = Table.count;
+        }
+        if (count <= 0)
+        {
+            count = 1;
+            AdaptableLog.Info($"For some reasons count <= 0 (is {Table}:{Table.count})");
+        }
 
-
-        int container = QscLootGenerator.GenerateLootCharFromTable(this.TaiwuEvent, Table, "");
-        QscCoreUtils.CallEvent(new EditorSimpleLootEvent(container, Event.count, Event.gold), "e34c7a9a-ea86-434b-874e-55cbb9866b9d");
+        int container = QscLootGenerator.GenerateLootCharFromTable(this.TaiwuEvent, Table.entry, "");
+        QscCoreUtils.CallEvent(new EditorSimpleLootEvent(container, count, Event.gold), "e34c7a9a-ea86-434b-874e-55cbb9866b9d");
     }
     
     /// <summary>
