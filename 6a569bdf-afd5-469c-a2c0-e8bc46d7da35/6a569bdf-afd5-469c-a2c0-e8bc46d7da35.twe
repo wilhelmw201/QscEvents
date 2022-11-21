@@ -1,0 +1,26 @@
+return {
+	EventGuid = "6a569bdf-afd5-469c-a2c0-e8bc46d7da35",
+	TmEdit = 1668986168,
+	SaveVersion = "Alpha_1",
+	EventGroup = "willtrevg1",
+	ForceSingle = false,
+	EventType = "ModEvent",
+	TriggerType = "None",
+	EventOrder = 100,
+	DecideRole = "RoleTaiwu",
+	TargetRole = "Xiangshu",
+	EventTexture = "",
+	InternalTexture = false,
+	TexturePath = "",
+	ControlMask = false,
+	ControlMaskCode = 0,
+	MaskTweenTime = "0",
+	AudioName = "",
+	EscOption = "",
+	Options = {
+		[1] = {
+			Guid = "86686962-f947-48c7-bfdb-fa8d08b69eb6",
+			OptionKey = "Option_-418486448",
+		},
+	},
+}

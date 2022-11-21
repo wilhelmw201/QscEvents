@@ -1,0 +1,30 @@
+return {
+	EventGuid = "fb86b88d-44b8-4023-a973-c8a46454dc07",
+	TmEdit = 1668809339,
+	SaveVersion = "Alpha_1",
+	EventGroup = "willtrevg1",
+	ForceSingle = false,
+	EventType = "ModEvent",
+	TriggerType = "None",
+	EventOrder = 203,
+	DecideRole = "RoleTaiwu",
+	TargetRole = "BattleEventEnemy",
+	EventTexture = "",
+	InternalTexture = false,
+	TexturePath = "",
+	ControlMask = false,
+	ControlMaskCode = 0,
+	MaskTweenTime = "0",
+	AudioName = "",
+	EscOption = "",
+	Options = {
+		[1] = {
+			Guid = "e7e6902e-46fe-48da-95e9-b0e19a4d80e8",
+			OptionKey = "Option_631551656",
+		},
+		[2] = {
+			Guid = "f518a914-c04b-4ebd-ab7f-3ecd18d152aa",
+			OptionKey = "Option_-896750391",
+		},
+	},
+}

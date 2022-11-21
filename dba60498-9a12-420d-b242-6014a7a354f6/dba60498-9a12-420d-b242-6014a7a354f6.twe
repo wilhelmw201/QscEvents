@@ -1,0 +1,26 @@
+return {
+	EventGuid = "dba60498-9a12-420d-b242-6014a7a354f6",
+	TmEdit = 1668715850,
+	SaveVersion = "Alpha_1",
+	EventGroup = "willtrevg1",
+	ForceSingle = false,
+	EventType = "ModEvent",
+	TriggerType = "None",
+	EventOrder = 1,
+	DecideRole = "",
+	TargetRole = "",
+	EventTexture = "",
+	InternalTexture = false,
+	TexturePath = "",
+	ControlMask = false,
+	ControlMaskCode = 0,
+	MaskTweenTime = "0",
+	AudioName = "",
+	EscOption = "",
+	Options = {
+		[1] = {
+			Guid = "767ad362-77fa-425d-b7f9-889f12f06eb4",
+			OptionKey = "Option_-963837379",
+		},
+	},
+}
