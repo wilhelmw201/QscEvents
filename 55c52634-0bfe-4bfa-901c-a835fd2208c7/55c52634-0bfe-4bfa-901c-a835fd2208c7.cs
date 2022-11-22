@@ -11,6 +11,7 @@ using Config.EventConfig;
 using GameData.ArchiveData;
 using GameData.Common;
 using GameData.Domains;
+using GameData.Domains.Adventure;
 using GameData.Domains.Map;
 using GameData.Domains.TaiwuEvent.EventHelper;
 using GameData.Utilities;
@@ -37,6 +38,8 @@ public class Event_55c526340bfe4bfa901ca835fd2208c7 : TaiwuEventItem
         short AreaId = TWLocation.AreaId;
         short BlockId = TWLocation.BlockId;
         var BlockData = EventHelper.GetMapBlockData(AreaId, BlockId);
+        var blockType = BlockData.BlockSubType;
+        if (blockType < EMapBlockSubType.Farmland || blockType > EMapBlockSubType.Block) return true;
         if (BlockData.Destroyed) return false;
         if (QscCoreUtils.GetQscSubProgress(this.TaiwuEvent) >= 1000) return false; 
         return true;
@@ -54,22 +57,35 @@ public class Event_55c526340bfe4bfa901ca835fd2208c7 : TaiwuEventItem
         // 否则初始化进度（现在已经有煎饼了）
         if (QscCoreUtils.GetWorldState(this.TaiwuEvent ) < 0)
         {
+            // 清理深谷出口事件
             QscCoreUtils.SetQscProgress(this.TaiwuEvent, 100);
             QscCoreUtils.SetQscSubProgress(this.TaiwuEvent, 0);
-        }
-        // 清理深谷出口事件
+            AdaptableLog.Info("Attempt to remove exit...");
+            AreaAdventureData adventuresInArea = DomainManager.Adventure.GetAdventuresInArea(0);
+            short id = -1;
+            AdventureSiteData val = null;
+            foreach (var site in adventuresInArea.AdventureSites)
+            {
+                AdaptableLog.Info($"{site.Key}:{site.Value}");
 
+                if (site.Value.TemplateId == 103)
+                {
+                    id = site.Key;
+                    val = site.Value;
+                }
+            } 
+            if (val != null)
+            {
+                AdaptableLog.Info("Success @ " + id);
+                EventHelper.RemoveAdventureSite(0, id, false, false);
+            }
+            // 进入提示
+            EventHelper.ToEvent("8c069855-3b07-4bc4-90e5-c2c853a62e55");
 
-        // 如果没有地块了，结束
-        if (QscCoreUtils.GetQscSubProgress(this.TaiwuEvent) >= 100)
-        {
-            QscCoreUtils.SetQscSubProgress(this.TaiwuEvent, 999);
-            EventHelper.ToEvent("a81b1116-d385-41fa-bf6f-3494e74d8dda");
             return;
         }
 
-
-        // 如果地块毁坏了结束
+        //
         var TWLocation = Taiwu.GetLocation();
         short AreaId = TWLocation.AreaId;
         short BlockId = TWLocation.BlockId;
@@ -82,7 +98,13 @@ public class Event_55c526340bfe4bfa901ca835fd2208c7 : TaiwuEventItem
             EventHelper.ToEvent("085fba80-2c0b-4590-ade4-2675fa4da780");
             return;
         }
-
+        // 如果没有地块了，结束
+        if (QscCoreUtils.GetQscSubProgress(this.TaiwuEvent) >= 100)
+        {
+            QscCoreUtils.SetQscSubProgress(this.TaiwuEvent, 1001);
+            EventHelper.ToEvent("a81b1116-d385-41fa-bf6f-3494e74d8dda");
+            return;
+        }
         // 按照地块类型，毁坏该地块并跳转
         BlockData.Destroyed = true;
         BlockData.CurrResources = new MaterialResources();

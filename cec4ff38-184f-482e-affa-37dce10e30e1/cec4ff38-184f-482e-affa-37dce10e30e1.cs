@@ -10,6 +10,7 @@ using Config.EventConfig;
 using GameData.Domains.TaiwuEvent.EventHelper;
 using GameData.Utilities;
 using Qsc;
+
 #endregion
 
 #if IN_IDE
@@ -49,7 +50,7 @@ public class Event_cec4ff38184f482eaffa37dce10e30e1 : TaiwuEventItem
         }
         else if (Boss == XiangShuType.HuanXin)
         {
-            bossid = Config.Character.DefKey.Huanxin;
+            bossid = Config.Character.DefKey.HuanxinIllusion;
         }
         else if (Boss == XiangShuType.RanChenZi)
         {
@@ -98,31 +99,31 @@ public class Event_cec4ff38184f482eaffa37dce10e30e1 : TaiwuEventItem
         switch (Boss)
         {
             case XiangShuType.MoNv:
-                return "<Character key=RoleTaiwu str=Name/>遭遇了莫女！\n“那剑我已舍身取回，你为何还不来拿？\n你定是仍在怪我鲁莽，也罢，我便用那剑将你杀了吧……”\n莫女幽幽地念道，话音未落，突然直扑向太吾！  ";
+                return "你遭遇了莫女！\n“那剑我已舍身取回，你为何还不来拿？\n你定是仍在怪我鲁莽，也罢，我便用那剑将你杀了吧……”\n莫女幽幽地念道，话音未落，突然直扑向太吾！  ";
             case XiangShuType.DaYueYaoChang:
-                return "<Character key=RoleTaiwu str=Name/>遭遇了大岳瑶常！\n“青天厚土，朗朗乾坤，何以会有这许多杀不尽、除不完的邪物？\n你又是何方妖怪！？是了，任你是佛是魔……尽皆当斩，当斩……”\n大岳瑶常说完，突然一声大喝，径直向太吾袭来！ ";
+                return "你遭遇了大岳瑶常！\n“青天厚土，朗朗乾坤，何以会有这许多杀不尽、除不完的邪物？\n你又是何方妖怪！？是了，任你是佛是魔……尽皆当斩，当斩……”\n大岳瑶常说完，突然一声大喝，径直向太吾袭来！ ";
             case XiangShuType.ShuFang:
-                return "<Character key=RoleTaiwu str=Name/>遭遇了术方！\n“通天彻地化万灵，句句天机字字金，赠尔玄玄两三言，爱惜性命何必听？\n尔若依言奉我令，我亦破肚献真心，区区天规何足忌，茫茫人世莫虚行！”\n术方唱完，哈哈大笑，突然抽出长剑向太吾疾刺而来！ ";
+                return "你遭遇了术方！\n“通天彻地化万灵，句句天机字字金，赠尔玄玄两三言，爱惜性命何必听？\n尔若依言奉我令，我亦破肚献真心，区区天规何足忌，茫茫人世莫虚行！”\n术方唱完，哈哈大笑，突然抽出长剑向太吾疾刺而来！ ";
             case XiangShuType.XueFeng:
-                return "<Character key=RoleTaiwu str=Name/>遭遇了血枫！\n“呜……吾还能再战！再战！”\n血枫面带凶狂之气，一见到太吾，便向其袭来！ ";
+                return "你遭遇了血枫！\n“呜……吾还能再战！再战！”\n血枫面带凶狂之气，一见到太吾，便向其袭来！ ";
             case XiangShuType.YiXiang:
-                return "<Character key=RoleTaiwu str=Name/>遭遇了以向！\n“玉活，玉活，溶去息壤凝作魂，\n玉活，玉活，如是孩童初见人，\n玉活，玉活，羞与人望常常隐……\n哎呀，玉不见啦！可是你偷走了我的活玉？”\n以向唱罢，两眼直勾勾地盯着太吾看，似乎便是太吾偷走了他的“活玉”……  ";
+                return "你遭遇了以向！\n“玉活，玉活，溶去息壤凝作魂，\n玉活，玉活，如是孩童初见人，\n玉活，玉活，羞与人望常常隐……\n哎呀，玉不见啦！可是你偷走了我的活玉？”\n以向唱罢，两眼直勾勾地盯着太吾看，似乎便是太吾偷走了他的“活玉”……  ";
             case XiangShuType.WeiQi:
-                return "<Character key=RoleTaiwu str=Name/>遭遇了卫起！\n“师父一直教导我：‘欲成大道，舍身取义’！\n我连命都舍了，可大道何在！？舍命难道及不上‘舍身’吗？！这是何故？你道这是何故？”\n卫起一边胡言乱语，一边目露凶光地向太吾步步逼近……";
+                return "你遭遇了卫起！\n“师父一直教导我：‘欲成大道，舍身取义’！\n我连命都舍了，可大道何在！？舍命难道及不上‘舍身’吗？！这是何故？你道这是何故？”\n卫起一边胡言乱语，一边目露凶光地向太吾步步逼近……";
             case XiangShuType.YiYiHou:
-                return "<Character key=RoleTaiwu str=Name/>遭遇了衣以候！\n“你可知丑狐去了哪里？是飞上了天宫？是坠落了黄泉？\n你不必答我，你们都想欺骗于我，唯有我那丑狐……”\n衣以候越说越悲怆，突然衣衫燃起无明异火，飞身向太吾袭来！";
+                return "你遭遇了衣以候！\n“你可知丑狐去了哪里？是飞上了天宫？是坠落了黄泉？\n你不必答我，你们都想欺骗于我，唯有我那丑狐……”\n衣以候越说越悲怆，突然衣衫燃起无明异火，飞身向太吾袭来！";
             case XiangShuType.JinHuangEr:
-                return "<Character key=RoleTaiwu str=Name/>遭遇了金凰儿！\n“我问你啊，方今之世，可有圣人吗？\n我等不到圣人，唯有出来寻找，且让我试试你可有圣人之才如何？”\n金凰儿嘻笑着对你说，不料话音未落，已拔刀向太吾劈来！ ";
+                return "你遭遇了金凰儿！\n“我问你啊，方今之世，可有圣人吗？\n我等不到圣人，唯有出来寻找，且让我试试你可有圣人之才如何？”\n金凰儿嘻笑着对你说，不料话音未落，已拔刀向太吾劈来！ ";
             case XiangShuType.JiuHan:
-                return "<Character key=RoleTaiwu str=Name/>遭遇了九寒！\n “洪水将至，你们却不去避祸……\n我欲救你们性命，你们反倒怕我多过于怕洪水，连我的面也不想看到……唉……”\n九寒悲伤的说着，忽然一个转身，犹如化作了一阵刺骨的寒风迎面向太吾袭来！ ";
+                return "你遭遇了九寒！\n “洪水将至，你们却不去避祸……\n我欲救你们性命，你们反倒怕我多过于怕洪水，连我的面也不想看到……唉……”\n九寒悲伤的说着，忽然一个转身，犹如化作了一阵刺骨的寒风迎面向太吾袭来！ ";
             case XiangShuType.LongYuFu:
-                return "<Character key=RoleTaiwu str=Name/>遭遇了龙语fu！\n【文案待定】";
+                return "你遭遇了龙语fu！\n【文案待定】";
             case XiangShuType.ZiWuXiao:
-                return "<Character key=RoleTaiwu str=Name/>遭遇了紫无绡！\n【文案待定】";
+                return "你遭遇了紫无绡！\n【文案待定】";
             case XiangShuType.HuanXin:
-                return "<Character key=RoleTaiwu str=Name/>遭遇了焕心！\n【文案待定】";
+                return "你遭遇了焕心！\n【文案待定】";
             case XiangShuType.RanChenZi:
-                return "<Character key=RoleTaiwu str=Name/>遭遇了染尘子！\n【文案待定】";
+                return "你遭遇了染尘子！\n【文案待定】";
             default:
                 return "???";
         }

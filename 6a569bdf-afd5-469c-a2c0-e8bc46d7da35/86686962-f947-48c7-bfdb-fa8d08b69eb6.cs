@@ -94,11 +94,17 @@ public class EventOption_86686962f94748c7bfdbfa8d08b69eb6 : Event_6a569bdfafd546
         // 选项标记为已读，如果再次进入该事件则显示为暗灰色。如果本事件链再次触发，则会清除已读标记
         // SetOptionRead(thisOption.OptionKey);
         //TODO 有需要分不同条件跳转时，在这里编码if/switch分支
-        var ev = this.TaiwuEvent;
-        QscCoreUtils.SetQscSubProgress(ev, 0);
-        QscCoreUtils.SetQscProgress(ev, QscCoreUtils.GetQscProgress(ev) + 10);
         var Taiwu = DomainManager.Taiwu.GetTaiwu();
-        Taiwu.ChangeConsummateLevel(DataContextManager.GetCurrentThreadDataContext(), 2);
+        var ev = this.TaiwuEvent;
+        int progress = QscCoreUtils.GetQscProgress(ev);
+        int currJingChun = Taiwu.GetConsummateLevel();
+
+        if (currJingChun <= progress * 2 && currJingChun <= 16)
+        {
+            Taiwu.ChangeConsummateLevel(DataContextManager.GetCurrentThreadDataContext(), 2);
+        }
+        QscCoreUtils.SetQscSubProgress(ev, 0);
+        QscCoreUtils.SetQscProgress(ev, progress + 10);
         return "085fba80-2c0b-4590-ade4-2675fa4da780";
     }
     

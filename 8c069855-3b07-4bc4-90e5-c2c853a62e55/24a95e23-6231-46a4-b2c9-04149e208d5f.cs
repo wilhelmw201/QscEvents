@@ -1,4 +1,4 @@
-//本文件填写竹屋事件 相枢2备战选项a2f29676-46b9-428e-aea1-4845ecd274d6在事件执行周期内的相关阶段函数
+//本文件填写入口Hint选项24a95e23-6231-46a4-b2c9-04149e208d5f在事件执行周期内的相关阶段函数
 
 //【记得经常使用 Ctrl+S 保存修改，只有保存以后才能在编辑事件时生效】
 
@@ -7,14 +7,14 @@
 //OptionAvailableConditions - 该变量用于决定该选项显示时在问号图标上提示玩家满足何种条件选项可用的Tips数据，如果未对该变量初始化，则选项不会显示问号图标
 
 //请填写以下接口
+#region CustomUsings
 
+#endregion
 #if IN_IDE
+using GameData.Common;
 using System.Collections.Generic;
-using System.Collections.Generic;
-using Config.EventConfig;
-using GameData.Domains.TaiwuEvent.EventHelper;
-using Qsc;
-public class EventOption_a2f2967646b9428eaea14845ecd274d6 : Event_cec4ff38184f482eaffa37dce10e30e1
+
+public class EventOption_24a95e23623146a4b2c904149e208d5f : Event_8c0698553b074bc490e5c2c853a62e55
 {
 #endif
 
@@ -77,10 +77,6 @@ public class EventOption_a2f2967646b9428eaea14845ecd274d6 : Event_cec4ff38184f48
     private string OnGetReplacedContent()
     {
         //TODO
-        //if (QscCoreUtils.GetQscProgress(this.TaiwuEvent) <= 1)
-        //{
-        //    return "拼死一战！（注：前两个boss是弱化版）";
-        //}
         return string.Empty;
     }
     
@@ -95,13 +91,20 @@ public class EventOption_a2f2967646b9428eaea14845ecd274d6 : Event_cec4ff38184f48
         // 选项标记为已读，如果再次进入该事件则显示为暗灰色。如果本事件链再次触发，则会清除已读标记
         // SetOptionRead(thisOption.OptionKey);
         //TODO 有需要分不同条件跳转时，在这里编码if/switch分支
-
-        int enemyId = 1;
-
-        ArgBox.Get("Xiangshu", ref enemyId);
-
-        EventHelper.StartCombat(enemyId, Config.CombatConfig.DefKey.DieNone, "b5eb09c7-5956-42b5-b8b2-e1ded455127b", ArgBox, true);
-
+        for (int i = 0; i < 8; i++)
+        {
+            DomainManager.Taiwu.GmCmd_AddResource(DataContextManager.GetCurrentThreadDataContext(), (sbyte)i, -50000);
+        }
+        var combatSkills = DomainManager.Taiwu.GetTaiwu().GetLearnedCombatSkills();
+        foreach (var sk in combatSkills)
+        {
+            var skill = Config.CombatSkill.Instance.GetItem(sk);
+            AdaptableLog.Info("Found learned skill " + skill.Name);
+            if (skill.Grade == 0)
+            {
+                QscLootUtil.ActivateCombatSkill(sk);
+            }
+        }
         return string.Empty;
     }
     

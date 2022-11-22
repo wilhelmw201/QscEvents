@@ -7,6 +7,16 @@
 #region CustomUsings
 using System.Collections.Generic;
 using Config.EventConfig;
+using System.Collections.Generic;
+using Config.EventConfig;
+using GameData.Domains;
+using GameData.ArchiveData;
+using GameData.Common;
+using GameData.Common;
+using System.Collections.Generic;
+using Qsc;
+using GameData.Domains.Taiwu;
+using GameData.Utilities;
 #endregion
 
 #if IN_IDE

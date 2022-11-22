@@ -50,7 +50,7 @@ public class EventOption_c6962616d6e141a4aaff9984e5c06c59 : Event_085fba802c0b45
     private bool OnVisibleCheck()
     {
         //TODO
-        return true;
+        return false;
     }
     
     /// <summary>
