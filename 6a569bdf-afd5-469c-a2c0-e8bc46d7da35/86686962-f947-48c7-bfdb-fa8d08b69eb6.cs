@@ -11,7 +11,9 @@
 
 #endregion
 #if IN_IDE
+using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using Config.EventConfig;
 using GameData.Common;
 using GameData.Domains;
@@ -97,14 +99,17 @@ public class EventOption_86686962f94748c7bfdbfa8d08b69eb6 : Event_6a569bdfafd546
         var Taiwu = DomainManager.Taiwu.GetTaiwu();
         var ev = this.TaiwuEvent;
         int progress = QscCoreUtils.GetQscProgress(ev);
+        int worldstate = QscCoreUtils.GetWorldState(ev);
         int currJingChun = Taiwu.GetConsummateLevel();
-
+        Taiwu.SetExtraNeili(Taiwu.GetExtraNeili() + (int)Math.Pow(worldstate, 2) * 10, GameData.Domains.DomainManager.TaiwuEvent.MainThreadDataContext);
+        
         if (currJingChun <= progress * 2 && currJingChun <= 16)
         {
             Taiwu.ChangeConsummateLevel(DataContextManager.GetCurrentThreadDataContext(), 2);
         }
         QscCoreUtils.SetQscSubProgress(ev, 0);
         QscCoreUtils.SetQscProgress(ev, progress + 10);
+        
         return "085fba80-2c0b-4590-ade4-2675fa4da780";
     }
     

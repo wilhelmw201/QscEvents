@@ -10,6 +10,7 @@ using Config.EventConfig;
 using GameData.ArchiveData;
 using GameData.Common;
 using GameData.Domains;
+using GameData.Domains.Character;
 using Qsc;
 #endregion
 
@@ -31,11 +32,17 @@ public class Event_6a569bdfafd5469ca2c0e8bc46d7da35 : TaiwuEventItem
     /// <summary>
     /// 该事件被触发且满足执行条件，事件显示前调用
     /// 一般用于向参数盒子中准备事件链需要用到的参数
-    /// </summary>
+    /// </summary> 
     public override void OnEventEnter()
     {
-        // 推动进度
-
+        // 移除伤病
+        var taiwu = DomainManager.Taiwu.GetTaiwu();
+        var injuries = new GameData.Domains.Character.Injuries();
+        injuries.Initialize();
+        taiwu.SetInjuries(injuries, DataContextManager.GetCurrentThreadDataContext());
+        var poison = new PoisonInts();
+        poison.Initialize();
+        taiwu.SetPoisoned(ref poison, DataContextManager.GetCurrentThreadDataContext());
 
     }
     

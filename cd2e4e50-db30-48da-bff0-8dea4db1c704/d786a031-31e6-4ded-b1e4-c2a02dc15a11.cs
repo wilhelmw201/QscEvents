@@ -1,4 +1,4 @@
-//本文件填写竹屋事件选项c6962616-d6e1-41a4-aaff-9984e5c06c59在事件执行周期内的相关阶段函数
+//本文件填写ShopEvent0选择选项d786a031-31e6-4ded-b1e4-c2a02dc15a11在事件执行周期内的相关阶段函数
 
 //【记得经常使用 Ctrl+S 保存修改，只有保存以后才能在编辑事件时生效】
 
@@ -7,13 +7,11 @@
 //OptionAvailableConditions - 该变量用于决定该选项显示时在问号图标上提示玩家满足何种条件选项可用的Tips数据，如果未对该变量初始化，则选项不会显示问号图标
 
 //请填写以下接口
-#region CustomUsings
 
-#endregion
 #if IN_IDE
 using System.Collections.Generic;
-using Config.EventConfig;
-public class EventOption_c6962616d6e141a4aaff9984e5c06c59 : Event_085fba802c0b4590ade42675fa4da780
+
+public class EventOption_d786a03131e64dedb1e4c2a02dc15a11 : Event_cd2e4e50db3048dabff08dea4db1c704
 {
 #endif
 
@@ -90,8 +88,7 @@ public class EventOption_c6962616d6e141a4aaff9984e5c06c59 : Event_085fba802c0b45
         // 选项标记为已读，如果再次进入该事件则显示为暗灰色。如果本事件链再次触发，则会清除已读标记
         // SetOptionRead(thisOption.OptionKey);
         //TODO 有需要分不同条件跳转时，在这里编码if/switch分支
-        ArgBox.Set("ZhuWuOp", 1000);
-	return "2b02c445-49d2-4756-bcbd-85c1571e81d4";
+        return string.Empty;
     }
     
     /// <summary>

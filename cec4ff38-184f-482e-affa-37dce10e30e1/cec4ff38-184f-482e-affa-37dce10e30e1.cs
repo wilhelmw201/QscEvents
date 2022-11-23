@@ -50,7 +50,7 @@ public class Event_cec4ff38184f482eaffa37dce10e30e1 : TaiwuEventItem
         }
         else if (Boss == XiangShuType.HuanXin)
         {
-            bossid = Config.Character.DefKey.HuanxinIllusion;
+            bossid = 445;
         }
         else if (Boss == XiangShuType.RanChenZi)
         {

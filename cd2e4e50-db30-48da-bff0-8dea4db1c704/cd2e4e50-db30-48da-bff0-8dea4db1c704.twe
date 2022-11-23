@@ -1,0 +1,49 @@
+return {
+	EventGuid = "cd2e4e50-db30-48da-bff0-8dea4db1c704",
+	TmEdit = 1669157131,
+	SaveVersion = "Alpha_1",
+	EventGroup = "willtrevg1",
+	ForceSingle = false,
+	EventType = "ModEvent",
+	TriggerType = "None",
+	EventOrder = 500,
+	DecideRole = "",
+	TargetRole = "",
+	EventTexture = "",
+	TexturePath = "",
+	ControlMask = false,
+	ControlMaskCode = 0,
+	MaskTweenTime = "0",
+	AudioName = "",
+	EscOption = "",
+	Options = {
+		[1] = {
+			Guid = "621de241-0a02-4eac-8736-c1aced6ce156",
+			OptionKey = "Option_-522177344",
+		},
+		[2] = {
+			Guid = "c3571c9a-9644-4c26-8f4c-d37860cc18e1",
+			OptionKey = "Option_-1962843898",
+		},
+		[3] = {
+			Guid = "f74c1b98-c1fa-4cef-abb7-bb1795af279e",
+			OptionKey = "Option_102681559",
+		},
+		[4] = {
+			Guid = "0703e1c7-3efa-43b9-b96c-0c4f25c1d1bb",
+			OptionKey = "Option_-979348562",
+		},
+		[5] = {
+			Guid = "d786a031-31e6-4ded-b1e4-c2a02dc15a11",
+			OptionKey = "Option_789981486",
+		},
+		[6] = {
+			Guid = "c4702764-5640-4d99-b6a6-07c46d87a30e",
+			OptionKey = "Option_-809628647",
+		},
+		[7] = {
+			Guid = "3f77c251-9f07-4578-9d60-10518e600016",
+			OptionKey = "Option_80821952",
+		},
+	},
+}

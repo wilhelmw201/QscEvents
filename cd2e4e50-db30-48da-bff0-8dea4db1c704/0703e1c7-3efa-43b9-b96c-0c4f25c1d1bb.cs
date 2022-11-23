@@ -1,4 +1,4 @@
-//本文件填写竹屋事件选项c6962616-d6e1-41a4-aaff-9984e5c06c59在事件执行周期内的相关阶段函数
+//本文件填写ShopEvent0选择选项0703e1c7-3efa-43b9-b96c-0c4f25c1d1bb在事件执行周期内的相关阶段函数
 
 //【记得经常使用 Ctrl+S 保存修改，只有保存以后才能在编辑事件时生效】
 
@@ -12,8 +12,8 @@
 #endregion
 #if IN_IDE
 using System.Collections.Generic;
-using Config.EventConfig;
-public class EventOption_c6962616d6e141a4aaff9984e5c06c59 : Event_085fba802c0b4590ade42675fa4da780
+
+public class EventOption_0703e1c73efa43b9b96c0c4f25c1d1bb : Event_cd2e4e50db3048dabff08dea4db1c704
 {
 #endif
 
@@ -90,8 +90,7 @@ public class EventOption_c6962616d6e141a4aaff9984e5c06c59 : Event_085fba802c0b45
         // 选项标记为已读，如果再次进入该事件则显示为暗灰色。如果本事件链再次触发，则会清除已读标记
         // SetOptionRead(thisOption.OptionKey);
         //TODO 有需要分不同条件跳转时，在这里编码if/switch分支
-        ArgBox.Set("ZhuWuOp", 1000);
-	return "2b02c445-49d2-4756-bcbd-85c1571e81d4";
+        return string.Empty;
     }
     
     /// <summary>
